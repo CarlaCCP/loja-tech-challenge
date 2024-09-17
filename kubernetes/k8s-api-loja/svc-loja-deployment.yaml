@@ -19,6 +19,8 @@ metadata:
   labels:
     app: svc-loja
   name: svc-loja
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-name: techbalance
 spec:
   ports:
     - port: 80
@@ -28,3 +30,4 @@ spec:
   selector:
     app: lojadeployment
   type: LoadBalancer
+  loadBalancerClass: service.k8s.aws/nlb
